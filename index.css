@@ -1,63 +1,130 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 * {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     box-sizing: border-box;
-    transition: linear 0.2s;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f5f5;
-    margin: 0%;
-    max-width: 100%;
-    overflow: hidden;
+    background-image: url(bkg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    backdrop-filter: blur(2px);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #333;
-    display: flex;
     text-align: center;
-    justify-content: center;
-    margin: 1.5rem 0;
+    font-size: 2em;
+    margin: 20px 0;
+    color: #099de2;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #ffffff;
 }
 
 a {
-    text-decoration: none;
-    color: #333;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    font-size: 1em;
+    margin: 10px 0;
+    color: #099de2;
 }
 
-button {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: #333;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #555;
-}
-
-.button-grid {
+.grid {
     display: grid;
-    grid-template-columns: repeat(1, 6fr);
-    grid-gap: 10px;
-    padding: 10px;
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 }
 
 .grid-item {
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-color: #1c3033;
+    padding: 50px 40px;
     text-align: center;
     font-size: 1.2em;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid-item:hover {
+    cursor: pointer;
+    background-color: #050811;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer a:hover {
+    color: #c2c1c1;
+}
+
+@media screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+progress {
+    width: 300px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: #eee;
+}
+
+progress::-webkit-progress-value {
+    background-color: green;
+}
+
+progress::-moz-progress-bar {
+    background-color: green;
+}
+
+#file {
+    width: 40%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#text::after {
+    content: "Loading...";
+    animation: blink 2s linear infinite;
 }
